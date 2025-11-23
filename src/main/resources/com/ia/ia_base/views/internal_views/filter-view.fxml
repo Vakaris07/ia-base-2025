@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../../../../../styles/filter.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.internalassessment.FilterView">
+   <children>
+      <Pane prefHeight="125.0" prefWidth="805.0" styleClass="accent" />
+      <Button fx:id="reset_filters_button" layoutX="50.0" layoutY="375.0" mnemonicParsing="false" styleClass="reset_button" text="Reset" textFill="#2d2d2d" translateY="150.0">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <Button id="apply_filters_button" fx:id="apply_filters_button" layoutX="650.0" layoutY="375.0" mnemonicParsing="false" styleClass="apply_button" stylesheets="@../../../Styles/filter.css" text="Apply filters" textFill="WHITE" translateY="150.0">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="50.0" layoutY="35.0" text="filter" textFill="#f5f6fa">
+         <font>
+            <Font name="Impact" size="48.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="79.0" layoutY="200.0" prefWidth="200.0" promptText="Device type" styleClass="combo_box" translateY="-25.0" />
+      <ComboBox layoutX="304.0" layoutY="200.0" prefWidth="200.0" promptText="CPU cores" styleClass="combo_box" translateY="-25.0" />
+      <ComboBox layoutX="304.0" layoutY="250.0" prefWidth="200.0" promptText="Operating system" styleClass="combo_box" translateY="-25.0" />
+      <ComboBox layoutX="79.0" layoutY="250.0" prefWidth="200.0" promptText="Storage" styleClass="combo_box" translateY="-25.0" />
+      <ComboBox layoutX="529.0" layoutY="200.0" prefWidth="200.0" promptText="RAM" styleClass="combo_box" translateY="-25.0" />
+      <ComboBox layoutX="529.0" layoutY="250.0" prefWidth="200.0" promptText="Vendor" styleClass="combo_box" translateY="-25.0" />
+   </children>
+</AnchorPane>

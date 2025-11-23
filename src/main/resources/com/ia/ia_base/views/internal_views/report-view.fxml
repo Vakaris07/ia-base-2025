@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../../../Styles/report.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.internalassessment.ReportView">
+   <children>
+      <Button fx:id="generate_report_button" layoutX="600.0" layoutY="525.0" mnemonicParsing="false" prefWidth="150.0" styleClass="generate_button" stylesheets="@../../../Styles/filter.css" text="New report" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="50.0" layoutY="45.0" text="report">
+         <font>
+            <Font name="Impact" size="48.0" />
+         </font>
+      </Label>
+      <TableView layoutX="50.0" layoutY="133.0" prefHeight="350.0" prefWidth="700.0" styleClass="table_view_background">
+        <columns>
+          <TableColumn prefWidth="342.77186584472656" text="name" />
+          <TableColumn prefWidth="188.72817993164062" text="date" />
+            <TableColumn prefWidth="167.0" text="view" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

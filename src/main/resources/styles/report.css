@@ -1,0 +1,19 @@
+.background{
+    -fx-background-color: #F5F6FA
+}
+.generate_button{
+    -fx-background-color: #FF6B35
+}
+.cancel_button{
+    -fx-background-color: #e1e1e1
+}
+.combo_box{
+    -fx-background-color: #e1e1e1
+}
+.table_view_background{
+    -fx-background-color: #ffffff
+}
+.accent{
+    -fx-background-color: #1E1E2F;
+
+}

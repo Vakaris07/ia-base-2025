@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e1e2f" height="100.0" layoutX="51.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="700.0" />
+      <Label fx:id="welcome_label" graphicTextGap="5.0" layoutX="76.0" layoutY="40.0" prefHeight="100.0" prefWidth="700.0" text="Welcome to AssetAtlas EDU" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Impact" size="36.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff6b35" height="200.0" layoutX="51.0" layoutY="331.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateY="-10.0" width="325.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e1e2f" height="300.0" layoutX="51.0" layoutY="221.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateY="-10.0" width="325.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff6b35" height="200.0" layoutX="426.0" layoutY="331.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateY="-10.0" width="325.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e1e2f" height="300.0" layoutX="426.0" layoutY="221.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateY="-10.0" width="325.0" />
+   </children>
+</AnchorPane>

@@ -33,7 +33,7 @@ public class MainApplication extends Application {
         
         // Load main window
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("views/MainView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 1000, 600);
         
         // Set Stage object in controller
         MainController controller = fxmlLoader.getController();

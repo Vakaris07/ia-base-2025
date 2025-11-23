@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../../../../../styles/inventory.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.internalassessment.InventoryView">
+   <children>
+      <TableView fx:id="device_table_view" layoutX="50.0" layoutY="150.0" prefHeight="400.0" prefWidth="700.0" styleClass="table_view_background" stylesheets="@../../../Styles/inventory.css">
+        <columns>
+          <TableColumn id="type_column" prefWidth="75.0" text=" type" />
+          <TableColumn id="MAC_address_column" prefWidth="165.88819122314453" text="model" />
+            <TableColumn id="MAC_address_column" prefWidth="109.11175537109375" text="vendor" />
+            <TableColumn id="MAC_address_column" prefWidth="88.2227783203125" text="location" />
+            <TableColumn id="MAC_address_column" prefWidth="99.53640747070312" text="quantity" />
+            <TableColumn id="MAC_address_column" prefWidth="70.963623046875" text="edit" />
+            <TableColumn id="MAC_address_column" prefWidth="89.87091064453125" text="delete" />
+        </columns>
+      </TableView>
+      <Button fx:id="filter_button" layoutX="618.0" layoutY="100.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="135.0" styleClass="filter_button" text="filter" textFill="#2d2d2d" translateX="-3.0">
+         <font>
+            <Font name="SansSerif Regular" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="50.0" layoutY="26.0" text="device inventory" textFill="#2d2d2d">
+         <font>
+            <Font name="Impact" size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="add_device_button" layoutX="618.0" layoutY="41.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="135.0" styleClass="add_button" text="+ add device" textFill="WHITE" translateX="-2.0">
+         <font>
+            <Font name="SansSerif Regular" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

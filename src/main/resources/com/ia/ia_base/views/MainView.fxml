@@ -29,20 +29,15 @@
             </menus>
         </MenuBar>
     </top>
-    
+
+    <left>
+        <fx:include source="internal_views/main-menu.fxml" fx:id="menuController"/>
+    </left>
+
+
+
     <center>
-        <VBox alignment="CENTER" spacing="20">
-            <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
-            </padding>
-            
-            <Label text="Welcome to IA Base Application!" style="-fx-font-size: 24px;"/>
-            <Label text="Use the menu to open new windows." style="-fx-font-size: 14px;"/>
-            
-            <Button text="Open Example Window" 
-                    onAction="#openExampleView" 
-                    style="-fx-font-size: 14px; -fx-padding: 10 20 10 20;"/>
-        </VBox>
+        <fx:include source="internal_views/home-page-view.fxml"/>
     </center>
     
 </BorderPane>

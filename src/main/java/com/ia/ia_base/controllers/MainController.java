@@ -35,7 +35,7 @@ public class MainController extends BaseController {
     
     @FXML
     private MenuItem aboutMenuItem;
-    
+
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
         setupMenuActions();
@@ -63,6 +63,8 @@ public class MainController extends BaseController {
             openModalWindow("views/AboutView.fxml", "About");
         });
     }
+
+
     
     /**
      * Confirms if user really wants to exit the application
@@ -86,6 +88,8 @@ public class MainController extends BaseController {
             stage.setTitle("Example Window");
         }
     }
+
+
     
     /**
      * Adds new menu item programmatically

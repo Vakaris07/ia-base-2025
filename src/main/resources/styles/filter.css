@@ -1,0 +1,16 @@
+.background{
+    -fx-background-color: #F5F6FA
+}
+.apply_button{
+    -fx-background-color: #FF6B35
+}
+.reset_button{
+    -fx-background-color: #e1e1e1
+}
+.combo_box{
+    -fx-background-color: #e1e1e1
+}
+.accent{
+    -fx-background-color: #1E1E2F;
+
+}
