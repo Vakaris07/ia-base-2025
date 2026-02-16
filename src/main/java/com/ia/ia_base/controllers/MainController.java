@@ -2,70 +2,68 @@ package com.ia.ia_base.controllers;
 
 import com.ia.ia_base.util.AlertManager;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 /**
  * Main window controller with menu system.
  */
 public class MainController extends BaseController {
-    
-    @FXML
-    private BorderPane mainPane;
-    
+
+
     @FXML
     private MenuBar menuBar;
-    
     @FXML
-    private Menu fileMenu;
-    
+    private BorderPane mainPane;
+
     @FXML
-    private MenuItem exitMenuItem;
-    
-    @FXML
-    private Menu viewMenu;
-    
-    @FXML
-    private MenuItem exampleViewMenuItem;
-    
-    @FXML
-    private Menu helpMenu;
-    
-    @FXML
-    private MenuItem aboutMenuItem;
+    private MenuController menuController;
+
 
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
-        setupMenuActions();
+        if (menuController != null) {
+            menuController.setMainController(this);
+        }
     }
-    
-    /**
-     * Sets up menu actions
-     */
-    private void setupMenuActions() {
-        // Close application with confirmation
-        exitMenuItem.setOnAction(e -> {
-            confirmExit();
-        });
-        
-        // Open example window (replaces current window)
-        exampleViewMenuItem.setOnAction(e -> {
-            changeScene("views/ExampleView.fxml");
-            if (stage != null) {
-                stage.setTitle("Example Window");
+
+    @Override
+    public void setStage(Stage stage) {
+        super.setStage(stage);  // sets stage in BaseController for MainController
+
+        // Forward the same stage to the included MenuController
+        if (menuController != null) {
+            menuController.setStage(stage);
+        }
+    }
+
+    public void loadCenterView(String fxmlPath) {
+        try {
+            String fullPath = "/com/ia/ia_base/" + fxmlPath;
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource(fullPath)
+            );
+            Parent root = loader.load();
+
+            BaseController controller = loader.getController();
+            if (controller != null) {
+                controller.setStage(stage);
             }
-        });
-        
-        // About menu
-        aboutMenuItem.setOnAction(e -> {
-            openModalWindow("views/AboutView.fxml", "About");
-        });
+
+            mainPane.setCenter(root);   //only change center
+        } catch (Exception e) {
+            System.err.println("Error loading center view: " + fxmlPath);
+            e.printStackTrace();
+        }
     }
 
-
-    
     /**
      * Confirms if user really wants to exit the application
      */
@@ -76,21 +74,20 @@ public class MainController extends BaseController {
             }
         }
     }
-    
+
     /**
      * Opens example window (used from button)
      * Replaces current window instead of opening new one
      */
     @FXML
-    private void openExampleView() {
-        changeScene("views/ExampleView.fxml");
+    private void openMainView() {
+        changeScene("views/MainView.fxml");
         if (stage != null) {
             stage.setTitle("Example Window");
         }
     }
 
 
-    
     /**
      * Adds new menu item programmatically
      */
@@ -99,7 +96,7 @@ public class MainController extends BaseController {
                 .filter(m -> m.getText().equals(menuName))
                 .findFirst()
                 .orElse(null);
-        
+
         if (menu != null) {
             MenuItem menuItem = new MenuItem(itemName);
             menuItem.setOnAction(e -> action.run());

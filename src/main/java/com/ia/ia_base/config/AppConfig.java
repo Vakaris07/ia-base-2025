@@ -20,7 +20,7 @@ public class AppConfig {
      * Default: false (not used) - application starts without DB
      * Change to true when ready to use DB
      */
-    private static boolean useDatabase = false;
+    private static boolean useDatabase = true;
     
     /**
      * Gets whether database is used
@@ -55,5 +55,8 @@ public class AppConfig {
     public static void disableDatabase() {
         setUseDatabase(false);
     }
+
+    public static final String ADMIN_DEFAULT_PASSWORD = "admin123";
+    public static final String ADMIN_EMAIL = "admin@gmail.com";
 }
 

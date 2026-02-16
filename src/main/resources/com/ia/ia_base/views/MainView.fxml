@@ -4,34 +4,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx"
+<BorderPane fx:id="mainPane"
+        xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.ia.ia_base.controllers.MainController">
     
     <top>
-        <MenuBar fx:id="menuBar">
-            <menus>
-                <Menu text="File" fx:id="fileMenu">
-                    <items>
-                        <MenuItem text="Exit" fx:id="exitMenuItem" mnemonicParsing="false"/>
-                    </items>
-                </Menu>
-                <Menu text="Windows" fx:id="viewMenu">
-                    <items>
-                        <MenuItem text="Example Window" fx:id="exampleViewMenuItem" mnemonicParsing="false"/>
-                    </items>
-                </Menu>
-                <Menu text="Help" fx:id="helpMenu">
-                    <items>
-                        <MenuItem text="About" fx:id="aboutMenuItem" mnemonicParsing="false"/>
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
+
     </top>
 
     <left>
-        <fx:include source="internal_views/main-menu.fxml" fx:id="menuController"/>
+        <fx:include source="internal_views/main-menu.fxml" fx:id="menu"/>
     </left>
 
 

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../../../../../styles/add-device.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.internalassessment.AddDeviceTypeView">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../../../../../styles/add-device.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.ia_base.controllers.AddDeviceViewController">
    <children>
       <Pane prefHeight="125.0" prefWidth="805.0" styleClass="accent" />
       <Label layoutX="50.0" layoutY="35.0" text="add device" textFill="#f5f6fa">
@@ -17,21 +18,43 @@
             <Font name="Impact" size="48.0" />
          </font>
       </Label>
-      <Button fx:id="cancel_button" layoutX="50.0" layoutY="525.0" mnemonicParsing="false" styleClass="cancel_button" text="Cancel" textFill="#2d2d2d">
+      <Button fx:id="cancel_button" layoutX="50.0" layoutY="525.0" mnemonicParsing="false" onAction="#closeAddDeviceView" styleClass="cancel_button" text="Cancel" textFill="#2d2d2d">
          <font>
             <Font name="SansSerif Regular" size="16.0" />
          </font>
       </Button>
-      <Button id="apply_filters_button" fx:id="done_button" layoutX="690.0" layoutY="525.0" mnemonicParsing="false" styleClass="add_button" stylesheets="@../../../Styles/filter.css" text="Done" textFill="WHITE">
+      <Button id="apply_filters_button" fx:id="done_button" layoutX="690.0" layoutY="525.0" mnemonicParsing="false" onAction="#handleSave" styleClass="add_button" stylesheets="@../../../../../styles/filter.css" text="Done" textFill="WHITE">
          <font>
             <Font name="SansSerif Regular" size="16.0" />
          </font>
       </Button>
-      <TreeTableView layoutX="50.0" layoutY="175.0" prefHeight="325.0" prefWidth="700.0" styleClass="tree_table_view">
-        <columns>
-          <TreeTableColumn prefWidth="576.4994277954102" text="C1" />
-          <TreeTableColumn prefWidth="123.50051879882812" text="C2" />
-        </columns>
-      </TreeTableView>
+      <Button id="apply_filters_button" fx:id="attributes_button" layoutX="640.0" layoutY="395.0" mnemonicParsing="false" onAction="#openAttributes" styleClass="cancel_button" stylesheets="@../../../../../styles/filter.css" text="Attributes" translateX="20.0">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="title_text_field" layoutX="50.0" layoutY="150.0" minHeight="30.0" minWidth="200.0" promptText="Title" styleClass="cancel_button" translateY="50.0" />
+      <TextField fx:id="description_text_field" layoutX="50.0" layoutY="200.0" minHeight="30.0" minWidth="200.0" promptText="Description" styleClass="cancel_button" translateY="50.0" />
+      <ComboBox fx:id="inventory_type_combo" layoutX="50.0" layoutY="250.0" prefHeight="30.0" prefWidth="200.0" promptText="Select inventory type" styleClass="cancel_button" translateY="50.0" />
+      <ComboBox fx:id="location_combo" layoutX="50.0" layoutY="300.0" prefHeight="30.0" prefWidth="200.0" promptText="Select location" styleClass="cancel_button" translateY="50.0" />
+      <ScrollPane fx:id="attributes_scroll_pane" layoutX="278.0" layoutY="199.0" prefHeight="185.0" prefWidth="470.0" styleClass="accent">
+         <content>
+            <VBox fx:id="attributes_vbox" prefHeight="151.0" prefWidth="414.0" />
+         </content></ScrollPane>
+      <Label layoutX="279.0" layoutY="176.0" text="Attributes:">
+         <font>
+            <Font name="SansSerif Regular" size="13.0" />
+         </font>
+      </Label>
+      <Button id="apply_filters_button" fx:id="locations_button" layoutX="540.0" layoutY="395.0" mnemonicParsing="false" onAction="#openLocations" styleClass="cancel_button" stylesheets="@../../../../../styles/filter.css" text="Locations" translateX="20.0">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <Button id="apply_filters_button" fx:id="inventory_types_button" layoutX="398.0" layoutY="395.0" mnemonicParsing="false" onAction="#openInventoryTypes" styleClass="cancel_button" stylesheets="@../../../../../styles/filter.css" text="Inventory types" translateX="20.0">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

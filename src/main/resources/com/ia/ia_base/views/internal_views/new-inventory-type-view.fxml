@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../../styles/new-attribute.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.ia_base.controllers.NewInventoryTypeController">
+   <children>
+      <Pane prefHeight="125.0" prefWidth="800.0" styleClass="accent" stylesheets="@../../../../../styles/new-attribute.css" />
+      <Label layoutX="50.0" layoutY="35.0" stylesheets="@../../../../../styles/new-attribute.css" text="inventory type creation" textFill="#f5f6fa">
+         <font>
+            <Font name="Impact" size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancel_button" layoutX="50.0" layoutY="545.0" mnemonicParsing="false" onAction="#cancel" styleClass="cancel_button" stylesheets="@../../../../../styles/new-attribute.css" text="Cancel" textFill="#2d2d2d">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <Button id="apply_filters_button" fx:id="done_button" layoutX="690.0" layoutY="545.0" mnemonicParsing="false" onAction="#confirm" styleClass="add_button" stylesheets="@../../../../../styles/new-attribute.css" text="Done" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="inventory_type_name_field" layoutX="50.0" layoutY="200.0" prefHeight="30.0" prefWidth="300.0" styleClass="cancel_button" />
+      <Label layoutX="50.0" layoutY="175.0" text="Inventory type name">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="inventory_type_description_field" layoutX="50.0" layoutY="277.0" prefHeight="30.0" prefWidth="300.0" styleClass="cancel_button" />
+      <Label layoutX="50.0" layoutY="250.0" prefHeight="20.0" prefWidth="260.0" text="Inventory type description (optional)">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+      <ScrollPane fx:id="attributes_scroll_pane" layoutX="400.0" layoutY="200.0" prefHeight="278.0" prefWidth="358.0">
+         <content>
+            <VBox fx:id="attributes_container" prefHeight="276.0" prefWidth="354.0" />
+         </content>
+      </ScrollPane>
+      <Label layoutX="400.0" layoutY="175.0" text="Select attributes:">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

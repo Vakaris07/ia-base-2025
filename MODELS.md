@@ -95,27 +95,29 @@ public class StudentEntity {
 ```java
 package com.ia.ia_base.database;
 
+import com.ia.ia_base.database.DAO.BaseDAO;
 import com.ia.ia_base.database.models.StudentEntity;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 public class StudentDAO extends BaseDAO<StudentEntity> {
-    
+
     public List<StudentEntity> findAll() throws SQLException {
         return executeQuery("SELECT * FROM students");
     }
-    
+
     public StudentEntity findById(int id) throws SQLException {
         List<StudentEntity> results = executeQuery("SELECT * FROM students WHERE id = ?", id);
         return results.isEmpty() ? null : results.get(0);
     }
-    
+
     public int create(StudentEntity student) throws SQLException {
         String sql = "INSERT INTO students (name, email, age) VALUES (?, ?, ?)";
         return executeUpdate(sql, student.getName(), student.getEmail(), student.getAge());
     }
-    
+
     @Override
     protected StudentEntity mapResultSetToEntity(ResultSet rs) throws SQLException {
         StudentEntity student = new StudentEntity();
@@ -403,49 +405,52 @@ CREATE TABLE customers (
 ```
 
 **CustomerDAO.java** (with composition):
+
 ```java
 package com.ia.ia_base.database;
 
+import com.ia.ia_base.database.DAO.BaseDAO;
 import com.ia.ia_base.database.models.CustomerEntity;
 import com.ia.ia_base.database.models.AddressEntity;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 public class CustomerDAO extends BaseDAO<CustomerEntity> {
-    
+
     public List<CustomerEntity> findAll() throws SQLException {
         return executeQuery("SELECT * FROM customers");
     }
-    
+
     public int create(CustomerEntity customer) throws SQLException {
         String sql = "INSERT INTO customers (name, email, street, city, postal_code, country) " +
-                     "VALUES (?, ?, ?, ?, ?, ?)";
+                "VALUES (?, ?, ?, ?, ?, ?)";
         AddressEntity addr = customer.getAddress();
-        return executeUpdate(sql, 
-            customer.getName(), 
-            customer.getEmail(),
-            addr.getStreet(),
-            addr.getCity(),
-            addr.getPostalCode(),
-            addr.getCountry()
+        return executeUpdate(sql,
+                customer.getName(),
+                customer.getEmail(),
+                addr.getStreet(),
+                addr.getCity(),
+                addr.getPostalCode(),
+                addr.getCountry()
         );
     }
-    
+
     @Override
     protected CustomerEntity mapResultSetToEntity(ResultSet rs) throws SQLException {
         CustomerEntity customer = new CustomerEntity();
         customer.setId(rs.getInt("id"));
         customer.setName(rs.getString("name"));
         customer.setEmail(rs.getString("email"));
-        
+
         // Create AddressEntity object from database
         AddressEntity address = new AddressEntity();
         address.setStreet(rs.getString("street"));
         address.setCity(rs.getString("city"));
         address.setPostalCode(rs.getString("postal_code"));
         address.setCountry(rs.getString("country"));
-        
+
         customer.setAddress(address);
         return customer;
     }

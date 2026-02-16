@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../../styles/device-attributes.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.ia_base.controllers.DeviceAttributesController">
+   <children>
+      <Pane prefHeight="125.0" prefWidth="800.0" styleClass="accent" />
+      <Label layoutX="50.0" layoutY="35.0" text="device attributes" textFill="#f5f6fa">
+         <font>
+            <Font name="Impact" size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancel_button" layoutX="50.0" layoutY="535.0" mnemonicParsing="false" onAction="#closeAddDeviceView" styleClass="cancel_button" text="Cancel" textFill="#2d2d2d">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <Button id="apply_filters_button" fx:id="done_button" layoutX="690.0" layoutY="535.0" mnemonicParsing="false" styleClass="add_button" stylesheets="@../../../../../styles/filter.css" text="Done" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <TableView fx:id="attributes_table_view" layoutX="50.0" layoutY="210.0" prefHeight="300.0" prefWidth="700.0" styleClass="tree_table_view">
+         <columns>
+            <TableColumn fx:id="id_column" prefWidth="43.37812423706055" text="ID" />
+            <TableColumn fx:id="name_column" prefWidth="188.25841522216797" text="name" />
+            <TableColumn fx:id="data_type_column" prefWidth="106.96051025390625" text="data type" />
+            <TableColumn fx:id="description_column" prefWidth="245.71783447265625" text="description" />
+            <TableColumn fx:id="actions_column" prefWidth="114.28216552734375" text="actions" />
+         </columns>
+      </TableView>
+      <Button id="apply_filters_button" fx:id="new_attribute_button" layoutX="630.0" layoutY="150.0" mnemonicParsing="false" onAction="#openNewAttributeCreation" prefHeight="30.0" prefWidth="120.0" styleClass="add_button" stylesheets="@../../../../../styles/filter.css" text="New Attribute" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <Button id="apply_filters_button" fx:id="refresh_button" layoutX="478.0" layoutY="150.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="31.0" prefWidth="143.0" styleClass="cancel_button" stylesheets="@../../../../../styles/filter.css" text="Refresh Table">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

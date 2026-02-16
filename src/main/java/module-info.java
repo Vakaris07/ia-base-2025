@@ -3,6 +3,7 @@ module com.ia.ia_base {
     requires javafx.fxml;
     requires java.sql;
     requires java.desktop;
+    requires jbcrypt;
 
     opens com.ia.ia_base to javafx.fxml;
     opens com.ia.ia_base.controllers to javafx.fxml;
@@ -12,5 +13,6 @@ module com.ia.ia_base {
     exports com.ia.ia_base.database;
     exports com.ia.ia_base.util;
     exports com.ia.ia_base.config;
-    exports com.ia.ia_base.database.models.example;
+    exports com.ia.ia_base.models;
+    exports com.ia.ia_base.database.DAO;
 }

@@ -1,6 +1,6 @@
 package com.ia.ia_base.database.example;
 
-import com.ia.ia_base.database.BaseDAO;
+import com.ia.ia_base.database.DAO.BaseDAO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

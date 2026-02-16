@@ -1,6 +1,7 @@
-package com.ia.ia_base.database;
+package com.ia.ia_base.database.DAO;
 
 import com.ia.ia_base.config.AppConfig;
+import com.ia.ia_base.database.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,11 +16,11 @@ import java.util.List;
  */
 public abstract class BaseDAO<T> {
     protected DatabaseConnection dbConnection;
-    
+
     public BaseDAO() {
         this.dbConnection = DatabaseConnection.getInstance();
     }
-    
+
     /**
      * Checks if database is used
      */
@@ -28,19 +29,19 @@ public abstract class BaseDAO<T> {
             throw new SQLException("Database not used. Enable it with AppConfig.setUseDatabase(true)");
         }
     }
-    
+
     /**
      * Executes SELECT query and returns results
      */
     protected List<T> executeQuery(String sql, Object... params) throws SQLException {
         checkDatabaseEnabled();
-        
+
         List<T> results = new ArrayList<>();
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-            
+
             setParameters(stmt, params);
-            
+
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     results.add(mapResultSetToEntity(rs));
@@ -49,34 +50,43 @@ public abstract class BaseDAO<T> {
         }
         return results;
     }
-    
+
     /**
      * Executes INSERT, UPDATE, DELETE queries
      */
     protected int executeUpdate(String sql, Object... params) throws SQLException {
         checkDatabaseEnabled();
-        
+
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-            
+
             setParameters(stmt, params);
             return stmt.executeUpdate();
         }
     }
-    
+
     /**
      * Sets parameters for PreparedStatement object
      */
     private void setParameters(PreparedStatement stmt, Object... params) throws SQLException {
+        if (params == null) {
+            return;
+        }
         for (int i = 0; i < params.length; i++) {
             stmt.setObject(i + 1, params[i]);
         }
     }
-    
+
     /**
      * Converts ResultSet to Entity object
      * Must be implemented in each child class
      */
     protected abstract T mapResultSetToEntity(ResultSet rs) throws SQLException;
+    public abstract List<T> findAll() throws SQLException;
+    public abstract T findById(int id) throws SQLException;
+    public abstract int create(T entity) throws SQLException;
+    public abstract int update(T entity) throws SQLException;
+    public abstract int delete(int id) throws SQLException;
+
 }
 

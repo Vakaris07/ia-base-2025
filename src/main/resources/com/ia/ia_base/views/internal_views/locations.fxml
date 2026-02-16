@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../../styles/device-attributes.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.ia_base.controllers.LocationsController">
+   <children>
+      <Pane prefHeight="125.0" prefWidth="800.0" styleClass="accent" />
+      <Label layoutX="50.0" layoutY="35.0" text="locations" textFill="#f5f6fa">
+         <font>
+            <Font name="Impact" size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancel_button" layoutX="50.0" layoutY="535.0" mnemonicParsing="false" onAction="#closeAddLocationsView" styleClass="cancel_button" text="Cancel" textFill="#2d2d2d">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <Button id="apply_filters_button" fx:id="done_button" layoutX="690.0" layoutY="535.0" mnemonicParsing="false" styleClass="add_button" stylesheets="@../../../../../styles/filter.css" text="Done" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <TableView fx:id="locations_table_view" layoutX="50.0" layoutY="210.0" prefHeight="300.0" prefWidth="700.0" styleClass="tree_table_view">
+         <columns>
+            <TableColumn fx:id="id_column" prefWidth="43.37812423706055" text="ID" />
+            <TableColumn fx:id="school_sector_column" prefWidth="227.60152435302734" text="school sector" />
+            <TableColumn fx:id="room_number_column" prefWidth="305.3984680175781" text="room number" />
+            <TableColumn fx:id="actions_column" prefWidth="123.07208251953125" text="actions" />
+         </columns>
+      </TableView>
+      <Button id="apply_filters_button" fx:id="new_locations_button" layoutX="620.0" layoutY="150.0" mnemonicParsing="false" onAction="#openNewLocationCreation" prefHeight="31.0" prefWidth="130.0" styleClass="add_button" stylesheets="@../../../../../styles/filter.css" text="New Location" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <Button id="apply_filters_button" fx:id="refresh_button" layoutX="463.0" layoutY="150.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="31.0" prefWidth="143.0" styleClass="cancel_button" stylesheets="@../../../../../styles/filter.css" text="Refresh Table">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

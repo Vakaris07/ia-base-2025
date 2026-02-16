@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="416.0" prefWidth="440.0" spacing="20" styleClass="background" stylesheets="@../../../../../styles/registration.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.ia_base.controllers.RegistrationController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e1e2f" height="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="accent" translateY="100.0" width="400.0" />
+      <Label text="registration" textFill="WHITE">
+         <font>
+            <Font name="Impact" size="48.0" />
+         </font>
+      </Label>
+        <TextField fx:id="emailField" promptText="Email" translateY="15.0" />
+        <PasswordField fx:id="passwordField" promptText="Password" translateY="10.0" />
+        <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password" translateY="5.0" />
+        <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleRegister" text="register" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="15.0" />
+         </font>
+      </Button>
+        <Separator styleClass="background" />
+        <HBox alignment="CENTER" spacing="5">
+            <Label text="Already have an account?">
+            <font>
+               <Font name="SansSerif Regular" size="15.0" />
+            </font></Label>
+            <Hyperlink fx:id="loginLink" onAction="#handleLoginLink" text="Login">
+            <font>
+               <Font name="SansSerif Regular" size="15.0" />
+            </font></Hyperlink>
+        </HBox>
+    </children>
+</VBox>

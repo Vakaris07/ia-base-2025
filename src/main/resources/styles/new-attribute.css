@@ -1,0 +1,16 @@
+.background{
+    -fx-background-color: #F5F6FA
+}
+.add_button{
+    -fx-background-color: #FF6B35
+}
+.cancel_button{
+    -fx-background-color: #e1e1e1
+}
+.tree_table_view{
+    -fx-background-color: #e1e1e1
+}
+.accent{
+    -fx-background-color: #1E1E2F;
+
+}

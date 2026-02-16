@@ -129,27 +129,28 @@ public class UserEntity {
 ```java
 package com.ia.ia_base.database;
 
-import com.ia.ia_base.database.BaseDAO;
+import com.ia.ia_base.database.DAO.BaseDAO;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 public class UserDAO extends BaseDAO<UserEntity> {
-    
+
     public List<UserEntity> findAll() throws SQLException {
         return executeQuery("SELECT * FROM users");
     }
-    
+
     public UserEntity findById(int id) throws SQLException {
         List<UserEntity> results = executeQuery("SELECT * FROM users WHERE id = ?", id);
         return results.isEmpty() ? null : results.get(0);
     }
-    
+
     public int create(UserEntity user) throws SQLException {
-        return executeUpdate("INSERT INTO users (name, email) VALUES (?, ?)", 
-                           user.getName(), user.getEmail());
+        return executeUpdate("INSERT INTO users (name, email) VALUES (?, ?)",
+                user.getName(), user.getEmail());
     }
-    
+
     @Override
     protected UserEntity mapResultSetToEntity(ResultSet rs) throws SQLException {
         UserEntity user = new UserEntity();

@@ -7,20 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../../../../../styles/inventory.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.internalassessment.InventoryView">
+<AnchorPane fx:id="inventoryView" prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../../../../../styles/inventory.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.ia_base.controllers.InventoryViewController">
    <children>
-      <TableView fx:id="device_table_view" layoutX="50.0" layoutY="150.0" prefHeight="400.0" prefWidth="700.0" styleClass="table_view_background" stylesheets="@../../../Styles/inventory.css">
+      <TableView fx:id="inventory_table_view" layoutX="50.0" layoutY="150.0" prefHeight="400.0" prefWidth="700.0" styleClass="table_view_background" stylesheets="@../../../../../styles/inventory.css">
         <columns>
-          <TableColumn id="type_column" prefWidth="75.0" text=" type" />
-          <TableColumn id="MAC_address_column" prefWidth="165.88819122314453" text="model" />
-            <TableColumn id="MAC_address_column" prefWidth="109.11175537109375" text="vendor" />
-            <TableColumn id="MAC_address_column" prefWidth="88.2227783203125" text="location" />
-            <TableColumn id="MAC_address_column" prefWidth="99.53640747070312" text="quantity" />
-            <TableColumn id="MAC_address_column" prefWidth="70.963623046875" text="edit" />
-            <TableColumn id="MAC_address_column" prefWidth="89.87091064453125" text="delete" />
+          <TableColumn id="type_column" fx:id="sku_column" prefWidth="43.09052276611328" text="SKU" />
+          <TableColumn id="MAC_address_column" fx:id="title_column" prefWidth="128.90950775146484" text="title" />
+            <TableColumn id="MAC_address_column" fx:id="description_column" prefWidth="205.1085662841797" text="description" />
+            <TableColumn id="MAC_address_column" fx:id="inventory_type_column" prefWidth="118.89144897460938" text="inventory type" />
+            <TableColumn id="MAC_address_column" fx:id="location_column" prefWidth="78.85748291015625" text="location ID" />
+            <TableColumn id="MAC_address_column" fx:id="actions_column" prefWidth="127.380126953125" text="actions" />
         </columns>
       </TableView>
-      <Button fx:id="filter_button" layoutX="618.0" layoutY="100.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="135.0" styleClass="filter_button" text="filter" textFill="#2d2d2d" translateX="-3.0">
+      <Button fx:id="filter_button" layoutX="54.0" layoutY="105.0" mnemonicParsing="false" onAction="#openFilters" prefHeight="30.0" prefWidth="75.0" styleClass="filter_button" text="filters" textFill="#2d2d2d" translateX="-3.0">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font>
@@ -30,7 +29,12 @@
             <Font name="Impact" size="48.0" />
          </font>
       </Label>
-      <Button fx:id="add_device_button" layoutX="618.0" layoutY="41.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="135.0" styleClass="add_button" text="+ add device" textFill="WHITE" translateX="-2.0">
+      <Button fx:id="add_device_button" layoutX="615.0" layoutY="105.0" mnemonicParsing="false" onAction="#openAddDevice" prefHeight="30.0" prefWidth="135.0" styleClass="add_button" text="+ add device" textFill="WHITE" translateX="-2.0">
+         <font>
+            <Font name="SansSerif Regular" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="clear_button" layoutX="146.0" layoutY="105.0" mnemonicParsing="false" prefHeight="30.0" onAction="#clear" prefWidth="95.0" styleClass="filter_button" text="clear filters" textFill="#2d2d2d">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font>

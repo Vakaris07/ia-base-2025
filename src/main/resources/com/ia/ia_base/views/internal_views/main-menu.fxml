@@ -14,12 +14,12 @@
             <Font name="Beirut Regular" size="15.0" />
          </font>
       </Button>
-      <Button id="report_button" fx:id="report_button" alignment="TOP_LEFT" layoutX="50.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" styleClass="button2" text="reports" textFill="#fffefe" translateX="12.0" translateY="50.0">
+      <Button id="report_button" fx:id="report_button" alignment="TOP_LEFT" layoutX="50.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" styleClass="button2" text="reports" textFill="#fffefe" translateX="12.0" translateY="50.0" onAction="#openReportsView">
          <font>
             <Font name="Beirut Regular" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="logout_button" alignment="TOP_LEFT" layoutX="50.0" layoutY="250.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" styleClass="button2" text="log out" textFill="#fffefe" translateX="12.0" translateY="50.0">
+      <Button fx:id="logout_button" alignment="TOP_LEFT" layoutX="50.0" layoutY="250.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" styleClass="button2" text="log out" textFill="#fffefe" translateX="12.0" translateY="50.0" onAction="#onLogout">
          <font>
             <Font name="Beirut Regular" size="15.0" />
          </font>
@@ -44,7 +44,7 @@
             <Image url="@../../../../../images/computer.png" />
          </image>
       </ImageView>
-      <Button fx:id="home_button" alignment="TOP_LEFT" layoutX="63.0" layoutY="160.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" styleClass="button2" text="home" textFill="#fffefe" translateY="-10.0">
+      <Button fx:id="home_button" alignment="TOP_LEFT" layoutX="63.0" layoutY="160.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" styleClass="button2" text="home" textFill="#fffefe" translateY="-10.0" onAction="#openHomePageView">
          <font>
             <Font name="Beirut Regular" size="15.0" />
          </font>
